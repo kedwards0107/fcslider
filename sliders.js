@@ -341,7 +341,7 @@ document.getElementById("bulk").addEventListener("click", function () {
      coatingTime.value;
   }
 });
-// on keypress re-calculate batch size
+// on keyup re-calculate batch size
 document.getElementById("bulk").addEventListener("keyup", function () {
   if (document.getElementById("bulk").value == "0.7" && document.getElementById("bulk").value <= 1){
     console.log(document.getElementById("bulk").value);
@@ -410,7 +410,22 @@ document.getElementById("bulk").addEventListener("click", function () {
     100;
   document.getElementById("panFill").value = parseFloat(panFill).toFixed(2);
 });
-
+document.getElementById("tablet").addEventListener("keyup", function () {
+  perTablet =
+    (document.getElementById("tablet").value * (document.getElementById("slider3").value / 100));
+  document.getElementById("perTablet").value = parseFloat(perTablet).toFixed(2);
+  perBatch =
+      (document.getElementById("slider1").value * 1000) /
+      (document.getElementById("tablet").value / 1000);
+    document.getElementById("perBatch").value = parseFloat(perBatch).toFixed(0);
+});
+document.getElementById("bulk").addEventListener("keyup", function () {
+    panFill =
+      (document.getElementById("slider1").value /
+        document.getElementById("slider1").max) *
+      100;
+    document.getElementById("panFill").value = parseFloat(panFill).toFixed(2);
+});
     // var cpt = function (obj) {
     //   if (obj.value != "") {
     //     document.getElementById("perTablet").value =
@@ -453,7 +468,14 @@ function calculate() {
       document.getElementById("slider1").max) *
     100;
   document.getElementById("panFill").value = panFill.toFixed(1);
-
+  var perTablet =
+    document.getElementById("tablet").value *
+    (document.getElementById("slider3").value / 100);
+  document.getElementById("perTablet").value = parseFloat(perTablet).toFixed(2);
+  var perBatch =
+    (document.getElementById("slider1").value * 1000) /
+    (document.getElementById("tablet").value / 1000);
+  document.getElementById("perBatch").value = parseFloat(perBatch).toFixed(0);
   // Change slider1 value field background based on value entered
   var changeColor1 = function (obj) {
     if (obj.value > bsm2 && obj.value < bsm3) {
