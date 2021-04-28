@@ -425,6 +425,17 @@ document.getElementById("bulk").addEventListener("keyup", function () {
         document.getElementById("slider1").max) *
       100;
     document.getElementById("panFill").value = parseFloat(panFill).toFixed(2);
+    perMm3 =
+      document.getElementById("perTablet").value /
+      document.getElementById("surfaceArea").value;
+    document.getElementById("perMm3").value = parseFloat(perMm3).toFixed(3);
+});
+
+document.getElementById("surfaceArea").addEventListener("keyup", function () {
+  perMm3 =
+    document.getElementById("perTablet").value /
+    document.getElementById("surfaceArea").value;
+  document.getElementById("perMm3").value = parseFloat(perMm3).toFixed(3);
 });
     // var cpt = function (obj) {
     //   if (obj.value != "") {
@@ -476,6 +487,10 @@ function calculate() {
     (document.getElementById("slider1").value * 1000) /
     (document.getElementById("tablet").value / 1000);
   document.getElementById("perBatch").value = parseFloat(perBatch).toFixed(0);
+    var perMm3 =
+      (document.getElementById("perTablet").value) /
+      (document.getElementById("surfaceArea").value);
+    document.getElementById("perMm3").value = parseFloat(perMm3).toFixed(3);
   // Change slider1 value field background based on value entered
   var changeColor1 = function (obj) {
     if (obj.value > bsm2 && obj.value < bsm3) {
