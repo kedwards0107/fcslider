@@ -1,5 +1,3 @@
-// did this get pushed?
-
 var mousePosition, active_element;
 var offset = [0, 0];
 var isDown = false;
@@ -294,6 +292,7 @@ function createSuperTable(data, attributes) {
 var bsm2 = 83;
 var bsm3 = 124;
 calculate;
+// on click re-calculate batch size
 document.getElementById("bulk").addEventListener("click", function () {
   if (document.getElementById("bulk").value == "0.7") {
     console.log(document.getElementById("bulk").value);
@@ -341,6 +340,61 @@ document.getElementById("bulk").addEventListener("click", function () {
      197.03 * document.getElementById("bulk").value *0.7).toFixed(1);
      coatingTime.value;
   }
+});
+// on keypress re-calculate batch size
+document.getElementById("bulk").addEventListener("keyup", function () {
+  if (document.getElementById("bulk").value == "0.7" && document.getElementById("bulk").value <= 1){
+    console.log(document.getElementById("bulk").value);
+    document.getElementById("slider1").min = 55;
+    document.getElementById("bsMarker1").innerHTML = 55;
+    document.getElementById("bsMarker2").innerHTML = 83;
+    bsm2 = parseInt(document.getElementById("bsMarker2").innerHTML);
+    document.getElementById("bsMarker3").innerHTML = 124;
+    bsm3 = parseInt(document.getElementById("bsMarker3").innerHTML);
+    document.getElementById("slider1").max = 138;
+    document.getElementById("bsMarker4").innerHTML = 138;
+    document.getElementById("slider1").value = 97;
+    coatingTime.value;
+  } else if (
+    document.getElementById("bulk").value != "0.7" &&
+    document.getElementById("bulk").value <= 1
+  ) {
+    console.log("False");
+    document.getElementById("slider1").min = (
+      197.03 *
+      document.getElementById("bulk").value *
+      0.4
+    ).toFixed(1);
+    document.getElementById("bsMarker1").innerHTML = (
+      197.03 *
+      document.getElementById("bulk").value *
+      0.4
+    ).toFixed(1);
+    document.getElementById("bsMarker2").innerHTML = (
+      197.03 *
+      document.getElementById("bulk").value *
+      0.6
+    ).toFixed(1);
+    bsm2 = parseInt(document.getElementById("bsMarker2").innerHTML);
+    document.getElementById("bsMarker3").innerHTML = (
+      197.03 *
+      document.getElementById("bulk").value *
+      0.9
+    ).toFixed(1);
+    bsm3 = parseInt(document.getElementById("bsMarker3").innerHTML);
+    document.getElementById("slider1").max = (
+      197.03 * document.getElementById("bulk").value
+    ).toFixed(1);
+    document.getElementById("bsMarker4").innerHTML = (
+      197.03 * document.getElementById("bulk").value
+    ).toFixed(1);
+    document.getElementById("slider1").value = (
+      197.03 *
+      document.getElementById("bulk").value *
+      0.7
+    ).toFixed(1);
+    coatingTime.value;
+  } else document.getElementById("bulk").value = "N/A";
 });
 document.getElementById("bulk").addEventListener("click", function () {
   coatingTime =

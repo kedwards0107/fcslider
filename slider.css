@@ -1,6 +1,20 @@
 /* imports differnt fonts */
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&subset=latin-ext");
-/* Centers the page */
+
+/* To remove spinner for number inputs
+/* Chrome, Safari, Edge, Opera */
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Firefox */
+/* input[type=number] {
+  -moz-appearance: textfield;
+} */
+
+
 body {
   width: 80%;
   float: Center;
