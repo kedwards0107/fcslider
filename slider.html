@@ -279,12 +279,14 @@
     <input 
     type = "text"
     id="tablet" 
-    placeholder="Enter Tablet Weight"
     value=""
+    size = "7"
      />
     <p></p>
-    <label for="surfaceArea">Tablet Surface Area (mm3)</label>
-    <input id="surfaceArea" placeholder="Enter Surface Area" />
+    <label for="surfaceArea">Tablet Surface Area (mm<sup>3</sup>)</label>
+    <input 
+    id="surfaceArea" 
+    size = "7" />
     <p></p>
     <label>Bulk Density (mg/mL)</label>
     <input 
@@ -312,22 +314,22 @@
 
       <h2>Calculations</h2>
       <label for="">Coating Time (min)</label>
-      <input type="integer" id="coatingTime" disabled />
+      <input type="integer" id="coatingTime" size = "7"disabled />
       <p></p>
       <label for="">Spray Amount (kg)</label>
-      <input type="integer" id="sprayAmount" disabled />
+      <input type="integer" id="sprayAmount" size = "7"disabled />
       <p></p>
       <label for="">Pan Fill (%)</label>
-      <input type="integer" id="panFill" disabled />
+      <input type="integer" id="panFill" size = "7"disabled />
       <p></p>
       <label for="">Tablets per Batch</label>
-      <input type="integer" id="perBatch" disabled />
+      <input type="integer" id="perBatch" size = "7"disabled />
       <p></p>
       <label for="">Coating per Tablet (mg)</label>
-      <input type="integer" id="perTablet" disabled />
+      <input type="integer" id="perTablet" size = "7"disabled />
       <p></p>
-      <label for="">Coating per Tablet (mg/mm3)</label>
-      <input type="integer" id="perMm3" disabled />     
+      <label for="">Coating per Tablet (mg/mm<sup>3</sup>)</label>
+      <input type="integer" id="perMm3" size = "7"disabled />     
 
       </div>
     <script type="text/javascript" src="sliders.js"></script>
