@@ -11,6 +11,7 @@ var slider_positions = {};
 var slider_percentages = {};
 var slider_values = {};
 
+//Allows you to let go of slider, otherwise all mouse movement moves slider
 document.addEventListener(
   "mouseup",
   function () {
@@ -21,7 +22,7 @@ document.addEventListener(
   },
   true
 );
-
+//Allows for the slider ball to move when clicked
 document.addEventListener(
   "mousemove",
   function (event) {
@@ -237,7 +238,8 @@ function my_offset(elem) {
 
 function round(value, precision) {
   var multiplier = Math.pow(10, precision || 0);
-  return Math.round(value * multiplier) / multiplier;
+  var num32 = (value * multiplier) / multiplier;
+  return num32.toFixed(2);
 }
 
 var element;
