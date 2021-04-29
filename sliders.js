@@ -292,8 +292,8 @@ function createSuperTable(data, attributes) {
 
   return table;
 };
-var bsm2 = 83;
-var bsm3 = 124;
+bsm2 = 83;
+bsm3 = 124;
 calculate;
 // on click re-calculate batch size and change markers and marker values
 document.getElementById("bulk").addEventListener("click", function () {
@@ -434,6 +434,16 @@ document.getElementById("numGuns").addEventListener("click", function () {
     document.getElementById("slider2").value /
     document.getElementById("numGuns").value;
   document.getElementById("perGun").value = calcSprayPerGun.toFixed(0);
+  changeColor4 = function (obj) {
+    if (obj.value > 75 && obj.value < 100) {
+      obj.style.backgroundColor = "#84f415f0";
+    } else if (obj.value > 115) {
+      obj.style.backgroundColor = "red";
+    } else if (obj.value < 65) {
+      obj.style.backgroundColor = "red";
+    } else obj.style.backgroundColor = "yellow";
+  };
+  changeColor4(document.getElementById("perGun"));
 });
 
 // change calculations when number of guns value is changed by keyup
@@ -442,6 +452,16 @@ document.getElementById("numGuns").addEventListener("keyup", function () {
       document.getElementById("slider2").value /
       document.getElementById("numGuns").value;
     document.getElementById("perGun").value = calcSprayPerGun.toFixed(0);
+changeColor4 = function (obj) {
+  if (obj.value > 75 && obj.value < 100) {
+    obj.style.backgroundColor = "#84f415f0";
+  } else if (obj.value > 115) {
+    obj.style.backgroundColor = "red";
+  } else if (obj.value < 65) {
+    obj.style.backgroundColor = "red";
+  } else obj.style.backgroundColor = "yellow";
+};
+changeColor4(document.getElementById("perGun"));
 });
 // change calculations when tablet weight is entered
 document.getElementById("tablet").addEventListener("keyup", function () {
@@ -491,7 +511,6 @@ function calculate() {
   var slider7 = document.getElementById("slider7").value;
   var slider8 = document.getElementById("slider8").value;
 
-
   //Change Your Code here
   var coatingTime =
     (slider1 * parseFloat(1000) * (slider3 / 100)) /
@@ -518,33 +537,36 @@ function calculate() {
     document.getElementById("tablet").value *
     (document.getElementById("slider3").value / 100);
   document.getElementById("perTablet").value = parseFloat(
-    calcCoatPerTab).toFixed(2);
+    calcCoatPerTab
+  ).toFixed(2);
   var perBatch =
     (document.getElementById("slider1").value * 1000) /
     (document.getElementById("tablet").value / 1000);
   document.getElementById("perBatch").value = parseFloat(perBatch).toFixed(0);
-    var calcMm2 =
-      document.getElementById("perTablet").value /
-      document.getElementById("surfaceArea").value;
-    document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
-    var calcSprayPerGun =
-        (document.getElementById("slider2").value /
-          document.getElementById("numGuns").value);
-      document.getElementById("perGun").value = calcSprayPerGun.toFixed(0);
+  var calcMm2 =
+    document.getElementById("perTablet").value /
+    document.getElementById("surfaceArea").value;
+  document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
+  var calcSprayPerGun =
+    document.getElementById("slider2").value /
+    document.getElementById("numGuns").value;
+  document.getElementById("perGun").value = calcSprayPerGun.toFixed(0);
 
   // Change slider1 value field background based on value entered
+  var bsm2 = 83;
+  var bsm3 = 124;
   var changeColor1 = function (obj) {
     if (obj.value > bsm2 && obj.value < bsm3) {
       obj.style.backgroundColor = "#84f415f0";
     } else if (obj.value > document.getElementById("slider1").max * 0.95) {
       obj.style.backgroundColor = "red";
-    } else if (obj.value < document.getElementById("slider1").min * 1.1) {
+    } else if (obj.value < document.getElementById("slider1").min * 1.2585) {
       obj.style.backgroundColor = "red";
     } else obj.style.backgroundColor = "yellow";
   };
   changeColor1(document.getElementById("slider1"));
 
-  // Change slider2 value field background based on value entered
+  // Change Spray Rate value field background based on value entered
   var changeColor2 = function (obj) {
     if (obj.value > 1599 && obj.value < 1899) {
       obj.style.backgroundColor = "#84f415f0";
@@ -555,8 +577,8 @@ function calculate() {
     } else obj.style.backgroundColor = "yellow";
   };
   changeColor2(document.getElementById("slider6"));
-  
-  // Change slider3 value field background based on value entered
+
+  // Change weight gain value field background based on value entered
   var changeColor3 = function (obj) {
     if (obj.value > 324 && obj.value < 411) {
       obj.style.backgroundColor = "#84f415f0";
@@ -567,5 +589,95 @@ function calculate() {
     } else obj.style.backgroundColor = "yellow";
   };
   changeColor3(document.getElementById("slider2"));
-}
 
+  // Change spray per gun value field background based on value entered
+  var changeColor4 = function (obj) {
+    if (obj.value > 75 && obj.value < 100) {
+      obj.style.backgroundColor = "#84f415f0";
+    } else if (obj.value > 115) {
+      obj.style.backgroundColor = "red";
+    } else if (obj.value < 65) {
+      obj.style.backgroundColor = "red";
+    } else obj.style.backgroundColor = "yellow";
+  };
+  changeColor4(document.getElementById("perGun"));
+
+  // Change % weight gain field background based on value entered
+  var changeColor5 = function (obj) {
+    if (obj.value > 2 && obj.value < 4) {
+      obj.style.backgroundColor = "#84f415f0";
+    } else if (obj.value > 6) {
+      obj.style.backgroundColor = "red";
+    } else if (obj.value < 1.5) {
+      obj.style.backgroundColor = "red";
+    } else obj.style.backgroundColor = "yellow";
+  };
+  changeColor5(document.getElementById("slider3"));
+
+  // Change % pan fill field background based on value entered
+  var changeColor5 = function (obj) {
+    if (obj.value > 60 && obj.value < 90) {
+      obj.style.backgroundColor = "#84f415f0";
+    } else if (obj.value > 95) {
+      obj.style.backgroundColor = "red";
+    } else if (obj.value < 50) {
+      obj.style.backgroundColor = "red";
+    } else obj.style.backgroundColor = "yellow";
+  };
+  changeColor5(document.getElementById("panFill"));
+
+  // Change Bed Temp field background based on value entered
+  var changeColor6 = function (obj) {
+    if (obj.value > 40 && obj.value < 45) {
+      obj.style.backgroundColor = "#84f415f0";
+    } else if (obj.value > 47) {
+      obj.style.backgroundColor = "red";
+    } else if (obj.value < 35) {
+      obj.style.backgroundColor = "red";
+    } else obj.style.backgroundColor = "yellow";
+  };
+  changeColor6(document.getElementById("slider4"));
+
+  // Change Pan Speed field background based on value entered
+  var changeColor7 = function (obj) {
+    if (obj.value > 5 && obj.value < 8) {
+      obj.style.backgroundColor = "#84f415f0";
+    } else if (obj.value > 9) {
+      obj.style.backgroundColor = "red";
+    } else if (obj.value < 4) {
+      obj.style.backgroundColor = "red";
+    } else obj.style.backgroundColor = "yellow";
+  };
+  changeColor7(document.getElementById("slider5"));
+  
+  // Change Pan Speed field background based on value entered
+  var changeColor8 = function (obj) {
+    if (obj.value > 12 && obj.value < 20) {
+      obj.style.backgroundColor = "#84f415f0";
+    } else if (obj.value > 25) {
+      obj.style.backgroundColor = "red";
+    } else if (obj.value < 8) {
+      obj.style.backgroundColor = "red";
+    } else obj.style.backgroundColor = "yellow";
+  };
+  changeColor8(document.getElementById("slider7"));
+  // enter risks1
+  var enterRisk1 = function (obj) {
+    if (obj.value > 60 && obj.value < 90) {
+      document.getElementById("Risk1").innerHTML = "";
+    } else if (obj.value > 95) {
+      document.getElementById("Risk1").innerHTML =
+        "High Batch Size: Risk - Tablets spilling out of front of pan.<br> High Batch Size: Risk - Airflow impeded. Negative pan pressure not maintained.";
+    } else if (obj.value < 50) {
+      document.getElementById("Risk1").innerHTML =
+        "Low Batch Size: Risk - Exhaust plenum not covered diverting airflow. <br> Low Batch Size: Risk - Baffles exposed impeding flow and receiving coating.";
+    } else if (obj.value < 60 && obj.value > 50) {
+      document.getElementById("Risk1").innerHTML =
+        "Batch Size may be low, look for exposed baffles and improper tablet flow.";
+    } else if (obj.value > 90 && obj.value < 95) {
+      document.getElementById("Risk1").innerHTML =
+        "Batch Size may be high, look for tablets falling out of front of pan and ensure negative pan pressure.";
+    } else document.getElementById("Risk1").innerHTML = "";
+  };
+  enterRisk1(document.getElementById("panFill"));
+}
