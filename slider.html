@@ -133,15 +133,15 @@
         <div class="marker">500</div>
       </div>
       <input
-        type="number"
+        type="text"
         class="slider1"
         id="slider3"
         name="value3"
         text="Weight Gain (%)"
-        min=0
-        max=8
-        value=3
-        step=0.1
+        min="0"
+        max="8"
+        value="3"
+        step="0.1"
         onchange="calculate()"
       />
       <div class="Row_ticks">
@@ -271,6 +271,37 @@
         <div class="marker"></div>
         <div class="marker">30</div>
       </div>
+      <input
+        type="text"
+        class="slider1"
+        id="slider8"
+        name="value8"
+        text="BETA - Spray Per Gun (g/min)"
+        min="50"
+        max="125"
+        value="75"
+        step="1"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row">
+        <div class="marker">50</div>
+        <div class="marker"></div>
+        <div class="marker">75</div>
+        <div class="marker"></div>
+        <div class="marker">100</div>
+        <div class="marker"></div>
+        <div class="marker">125</div>
+
+      </div>
     </div>
       <!-- Change Label Here -->
       <div class="floaty">
@@ -283,7 +314,7 @@
     size = "7"
      />
     <p></p>
-    <label for="surfaceArea">Tablet Surface Area (mm<sup>3</sup>)</label>
+    <label for="surfaceArea">Tablet Surface Area (mm<sup>2</sup>)</label>
     <input 
     id="surfaceArea" 
     size = "7" />
@@ -295,42 +326,46 @@
     step = "0.1"
     min="0.1"
     max="0.9"
-    value="0.7"
-    onChange = "calculate()" />
+    value="0.7"/>
     <p></p>
-    <!-- <label for="tablet">Tablet Weight (mg)</label>
-    <input id="tablet" value="300" />
-    <p></p> -->
-      <!-- <input
-        type="number"
-        min="0.1"
-        max="1.0"
-        step="0.1"
-        value="0.5"
-        id="Bulk Density"
-      />
-      Bulk Density (g/mL)<text id="Bulk Density" style="inline"></text>
-      <p></p> -->
+    <label for="numGuns">Number of Guns</label>
+    <input 
+    type="number"
+    id="numGuns" 
+    min="2"
+    max="4"
+    size = "7"
+    value = "4" />
+    <p></p>
+    <form action=""></form>
+    <label for="typeCoat">Type of Coating:</label>
+    <select name="typeCoat" id="typeCoat">
+      <option value="Aesthetic Pigmented Coating" id="typeCoat">Aesthetic Pigmented Coating</option>
+      <option value="Aesthetic Clear Coating" id="typeCoat">Aesthetic Clear Coating</option>
+      <option value="Functional Coating" id="typeCoat">Functional Coating</option>
+    </select>
 
       <h2>Calculations</h2>
+      <label for="">Pan Fill (%)</label>
+      <input type="integer" id="panFill" size = "7"disabled />
+      <p></p>
       <label for="">Coating Time (min)</label>
       <input type="integer" id="coatingTime" size = "7"disabled />
       <p></p>
       <label for="">Spray Amount (kg)</label>
       <input type="integer" id="sprayAmount" size = "7"disabled />
       <p></p>
-      <label for="">Pan Fill (%)</label>
-      <input type="integer" id="panFill" size = "7"disabled />
+      <label for="">Spray Per Gun (g/min)</label>
+      <input type="integer" id="perGun" size = "7"disabled /> 
       <p></p>
       <label for="">Tablets per Batch</label>
-      <input type="integer" id="perBatch" size = "7"disabled />
+      <input type="integer" id="perBatch" size = "7" disabled />
       <p></p>
       <label for="">Coating per Tablet (mg)</label>
       <input type="integer" id="perTablet" size = "7"disabled />
       <p></p>
-      <label for="">Coating per Tablet (mg/mm<sup>3</sup>)</label>
-      <input type="integer" id="perMm3" size = "7"disabled />     
-
+      <label for="">Coating per Tablet (mg/mm<sup>2</sup>)</label>
+      <input type="integer" id="perMm2" size = "7"disabled />     
       </div>
     <script type="text/javascript" src="sliders.js"></script>
     <script type="text/javascript"></script>

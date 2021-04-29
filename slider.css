@@ -28,6 +28,7 @@ body {
 .floaty {
   width: 55%;
   float: right;
+text-align: justify;
 }
 
 h1 {
@@ -180,7 +181,8 @@ h2 {
 #slider4,
 #slider5,
 #slider6,
-#slider7 {
+#slider7,
+#slider8 {
   width: 10%;
   float: right;
   text-align: center;

@@ -169,7 +169,7 @@ for (var i = 0; i < sliders.length; i++) {
     },
     true
   );
-
+// changes slider value based on number entered in input field
   sliders[i].addEventListener(
     "change",
     function (e) {
@@ -235,7 +235,7 @@ function my_offset(elem) {
 
   return { left: x, top: y };
 }
-
+// Sets decimals for sliders
 function round(value, precision) {
   var multiplier = Math.pow(10, precision || 0);
   var num32 = (value * multiplier) / multiplier;
@@ -273,6 +273,7 @@ function createSuperElement(type, attributes, innerHTML, style) {
   return element;
 }
 
+// Creates table - deleted sliders if commented out
 function createSuperTable(data, attributes) {
   if (attributes === undefined) attributes = "";
   table = createSuperElement("table", attributes);
@@ -290,11 +291,11 @@ function createSuperTable(data, attributes) {
   }
 
   return table;
-}
+};
 var bsm2 = 83;
 var bsm3 = 124;
 calculate;
-// on click re-calculate batch size
+// on click re-calculate batch size and change markers and marker values
 document.getElementById("bulk").addEventListener("click", function () {
   if (document.getElementById("bulk").value == "0.7") {
     console.log(document.getElementById("bulk").value);
@@ -343,7 +344,7 @@ document.getElementById("bulk").addEventListener("click", function () {
      coatingTime.value;
   }
 });
-// on keyup re-calculate batch size
+// on keyup re-calculate batch size and change marker values
 document.getElementById("bulk").addEventListener("keyup", function () {
   if (document.getElementById("bulk").value == "0.7" && document.getElementById("bulk").value <= 1){
     console.log(document.getElementById("bulk").value);
@@ -398,6 +399,7 @@ document.getElementById("bulk").addEventListener("keyup", function () {
     coatingTime.value;
   } else document.getElementById("bulk").value = "N/A";
 });
+// change calculations when bulk density value is changed by click
 document.getElementById("bulk").addEventListener("click", function () {
   coatingTime =
     (document.getElementById("slider1").value *
@@ -412,33 +414,63 @@ document.getElementById("bulk").addEventListener("click", function () {
     100;
   document.getElementById("panFill").value = parseFloat(panFill).toFixed(2);
 });
-document.getElementById("tablet").addEventListener("keyup", function () {
-  perTablet =
-    (document.getElementById("tablet").value * (document.getElementById("slider3").value / 100));
-  document.getElementById("perTablet").value = parseFloat(perTablet).toFixed(2);
-  perBatch =
-      (document.getElementById("slider1").value * 1000) /
-      (document.getElementById("tablet").value / 1000);
-    document.getElementById("perBatch").value = parseFloat(perBatch).toFixed(0);
-});
+
+// change calculations when bulk density value is changed by keyup
 document.getElementById("bulk").addEventListener("keyup", function () {
     panFill =
       (document.getElementById("slider1").value /
         document.getElementById("slider1").max) *
       100;
     document.getElementById("panFill").value = parseFloat(panFill).toFixed(2);
-    perMm3 =
+    calcMm2 =
       document.getElementById("perTablet").value /
       document.getElementById("surfaceArea").value;
-    document.getElementById("perMm3").value = parseFloat(perMm3).toFixed(3);
+    document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
 });
 
+// change calculations when number of guns value is changed by click
+document.getElementById("numGuns").addEventListener("click", function () {
+  calcSprayPerGun =
+    document.getElementById("slider2").value /
+    document.getElementById("numGuns").value;
+  document.getElementById("perGun").value = calcSprayPerGun.toFixed(0);
+});
+
+// change calculations when number of guns value is changed by keyup
+document.getElementById("numGuns").addEventListener("keyup", function () {
+    calcSprayPerGun =
+      document.getElementById("slider2").value /
+      document.getElementById("numGuns").value;
+    document.getElementById("perGun").value = calcSprayPerGun.toFixed(0);
+});
+// change calculations when tablet weight is entered
+document.getElementById("tablet").addEventListener("keyup", function () {
+  calcCoatPerTab =
+    document.getElementById("tablet").value *
+    (document.getElementById("slider3").value / 100);
+  document.getElementById("perTablet").value = parseFloat(calcCoatPerTab).toFixed(2);
+  perBatch =
+    (document.getElementById("slider1").value * 1000) /
+    (document.getElementById("tablet").value / 1000);
+  document.getElementById("perBatch").value = parseFloat(perBatch).toFixed(0);
+});
+// change calculation when surface area is entered
 document.getElementById("surfaceArea").addEventListener("keyup", function () {
-  perMm3 =
+  calcMm2 =
     document.getElementById("perTablet").value /
     document.getElementById("surfaceArea").value;
-  document.getElementById("perMm3").value = parseFloat(perMm3).toFixed(3);
+  document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
 });
+
+// document.getElementById("slider2").addEventListener("click", function () {
+//   numGuns =
+//      document.getElementById("slider2").value /
+//      document.getElementById("numGuns").value;
+//    document.getElementById("slider8").value = numGuns.toFixed(2);
+//   return document.getElementById("slider8").value;
+// });
+
+
     // var cpt = function (obj) {
     //   if (obj.value != "") {
     //     document.getElementById("perTablet").value =
@@ -457,7 +489,8 @@ function calculate() {
   var slider5 = document.getElementById("slider5").value;
   var slider6 = document.getElementById("slider6").value;
   var slider7 = document.getElementById("slider7").value;
-  var bulk = document.getElementById("bulk").value;
+  var slider8 = document.getElementById("slider8").value;
+
 
   //Change Your Code here
   var coatingTime =
@@ -481,18 +514,24 @@ function calculate() {
       document.getElementById("slider1").max) *
     100;
   document.getElementById("panFill").value = panFill.toFixed(1);
-  var perTablet =
+  var calcCoatPerTab =
     document.getElementById("tablet").value *
     (document.getElementById("slider3").value / 100);
-  document.getElementById("perTablet").value = parseFloat(perTablet).toFixed(2);
+  document.getElementById("perTablet").value = parseFloat(
+    calcCoatPerTab).toFixed(2);
   var perBatch =
     (document.getElementById("slider1").value * 1000) /
     (document.getElementById("tablet").value / 1000);
   document.getElementById("perBatch").value = parseFloat(perBatch).toFixed(0);
-    var perMm3 =
-      (document.getElementById("perTablet").value) /
-      (document.getElementById("surfaceArea").value);
-    document.getElementById("perMm3").value = parseFloat(perMm3).toFixed(3);
+    var calcMm2 =
+      document.getElementById("perTablet").value /
+      document.getElementById("surfaceArea").value;
+    document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
+    var calcSprayPerGun =
+        (document.getElementById("slider2").value /
+          document.getElementById("numGuns").value);
+      document.getElementById("perGun").value = calcSprayPerGun.toFixed(0);
+
   // Change slider1 value field background based on value entered
   var changeColor1 = function (obj) {
     if (obj.value > bsm2 && obj.value < bsm3) {
