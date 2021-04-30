@@ -550,7 +550,7 @@ function calculate() {
   var calcSprayPerGun =
     document.getElementById("slider2").value /
     document.getElementById("numGuns").value;
-  document.getElementById("perGun").value = calcSprayPerGun.toFixed(0);
+  document.getElementById("perGun").value = calcSprayPerGun.toFixed(2);
 
   // Change slider1 value field background based on value entered
   var bsm2 = 83;
@@ -592,13 +592,18 @@ function calculate() {
 
   // Change spray per gun value field background based on value entered
   var changeColor4 = function (obj) {
-    if (obj.value > 75 && obj.value < 100) {
+    if (obj.value > 75 && obj.value < 100.1) {
       obj.style.backgroundColor = "#84f415f0";
+      document.getElementById("HL").innerHTML = "";
     } else if (obj.value > 115) {
       obj.style.backgroundColor = "red";
+      document.getElementById("HL").innerHTML = "High";
     } else if (obj.value < 65) {
       obj.style.backgroundColor = "red";
-    } else obj.style.backgroundColor = "yellow";
+      document.getElementById("HL").innerHTML = "Low";
+    } else { obj.style.backgroundColor = "yellow";
+    document.getElementById("HL").innerHTML = "";
+  }
   };
   changeColor4(document.getElementById("perGun"));
 
@@ -649,10 +654,10 @@ function calculate() {
     } else obj.style.backgroundColor = "yellow";
   };
   changeColor7(document.getElementById("slider5"));
-  
-  // Change Pan Speed field background based on value entered
+
+  // Change Spray Solids field background based on value entered
   var changeColor8 = function (obj) {
-    if (obj.value > 12 && obj.value < 20) {
+    if (obj.value > 12 && obj.value < 20.1) {
       obj.style.backgroundColor = "#84f415f0";
     } else if (obj.value > 25) {
       obj.style.backgroundColor = "red";
@@ -661,6 +666,21 @@ function calculate() {
     } else obj.style.backgroundColor = "yellow";
   };
   changeColor8(document.getElementById("slider7"));
+  
+  // Change Coating time field background based on value entered
+  var changeColor9 = function (obj) {
+    if (obj.value > 35 && obj.value < 90) {
+      obj.style.backgroundColor = "#84f415f0";
+      document.getElementById("Risk2").innerHTML = "";
+    } else if (obj.value > 120) {
+      obj.style.backgroundColor = "red";
+      document.getElementById("Risk2").innerHTML = "Coating Time: Risk - Long process time.";
+    } else if (obj.value < 25) {
+      obj.style.backgroundColor = "red";
+      document.getElementById("Risk2").innerHTML = "Coating Time: Risk - Too short of process; film coating may not be uniform.";
+    } else obj.style.backgroundColor = "yellow";
+  };
+  changeColor9(document.getElementById("coatingTime"));
   // enter risks1
   var enterRisk1 = function (obj) {
     if (obj.value > 60 && obj.value < 90) {
@@ -670,13 +690,13 @@ function calculate() {
         "High Batch Size: Risk - Tablets spilling out of front of pan.<br> High Batch Size: Risk - Airflow impeded. Negative pan pressure not maintained.";
     } else if (obj.value < 50) {
       document.getElementById("Risk1").innerHTML =
-        "Low Batch Size: Risk - Exhaust plenum not covered diverting airflow. <br> Low Batch Size: Risk - Baffles exposed impeding flow and receiving coating.";
+        "Low Batch Size: Risk - Exhaust plenum not covered; diverting airflow. <br> Low Batch Size: Risk - Baffles exposed impeding flow and receiving coating.";
     } else if (obj.value < 60 && obj.value > 50) {
       document.getElementById("Risk1").innerHTML =
-        "Batch Size may be low, look for exposed baffles and improper tablet flow.";
+        "Batch Size: Risk - may be low, look for exposed baffles and improper tablet flow.";
     } else if (obj.value > 90 && obj.value < 95) {
       document.getElementById("Risk1").innerHTML =
-        "Batch Size may be high, look for tablets falling out of front of pan and ensure negative pan pressure.";
+        "Batch Size: Risk - may be high, look for tablets falling out of front of pan and ensure negative pan pressure.";
     } else document.getElementById("Risk1").innerHTML = "";
   };
   enterRisk1(document.getElementById("panFill"));

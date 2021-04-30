@@ -305,7 +305,7 @@
     </div>
       <!-- Change Label Here -->
       <div class="floaty">
-      <h2>Inputs for Calculations</h2>
+      <h2>Inputs for Calculations:</h2>
     <label for="tablet">Tablet Weight (mg)</label>
     <input 
     type = "text"
@@ -335,7 +335,7 @@
     min="2"
     max="4"
     size = "7"
-    value = "4" />
+    value = "4" /> <span></span>
     <p></p>
     <form action=""></form>
     <label for="typeCoat">Type of Coating:</label>
@@ -345,18 +345,18 @@
       <option value="Functional Coating" id="typeCoat">Functional Coating</option>
     </select>
 
-      <h2>Calculations</h2>
+      <h2>Calculations:</h2>
       <label for="">Pan Fill (%)</label>
       <input type="integer" id="panFill" size = "7"disabled />
       <p></p>
       <label for="">Coating Time (min)</label>
       <input type="integer" id="coatingTime" size = "7"disabled />
       <p></p>
+      <label for="">Spray Per Gun (g/min)</label>
+      <input type="integer" id="perGun" size = "7"disabled /> <span id="HL"></span>
+      <p></p>
       <label for="">Spray Amount (kg)</label>
       <input type="integer" id="sprayAmount" size = "7"disabled />
-      <p></p>
-      <label for="">Spray Per Gun (g/min)</label>
-      <input type="integer" id="perGun" size = "7"disabled /> 
       <p></p>
       <label for="">Tablets per Batch</label>
       <input type="integer" id="perBatch" size = "7" disabled />
@@ -367,7 +367,8 @@
       <label for="">Coating per Tablet (mg/mm<sup>2</sup>)</label>
       <input type="integer" id="perMm2" size = "7"disabled /> 
     <h2>Risks</h2>
-    <p id="Risk1"></p>    
+    <p id="Risk1"></p> 
+    <p id="Risk2"></p>     
       </div>
     <script type="text/javascript" src="sliders.js"></script>
     <script type="text/javascript"></script>
