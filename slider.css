@@ -16,9 +16,9 @@ input::-webkit-inner-spin-button {
 
 
 body {
-  width: 80%;
+  width: 95%;
   float: Center;
-  margin: 0 0 0 30%;
+  margin: 0 0 0 3%;
   /* background-color: #e6e5e5; */
 }
 .content {
@@ -26,14 +26,21 @@ body {
   float: left;
 }
 .floaty {
-  width: 55%;
-  float: right;
-text-align: justify;
+  width: 25%;
+  margin: 3% 0 0 3%;
+  float: left;
+text-align: left;
+}
+.floaty2 {
+  width: 30%;
+  margin: 3% 0 0 0;
+  float: left;
+text-align: left;
 }
 
 h1 {
-  margin: 0 0 0 140px;
-  padding: 2% 0%;
+  padding: 1% 0 -1% 0;
+  text-align: center;
   color: #767474;
 }
 

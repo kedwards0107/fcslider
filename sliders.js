@@ -509,7 +509,7 @@ function calculate() {
   var slider5 = document.getElementById("slider5").value;
   var slider6 = document.getElementById("slider6").value;
   var slider7 = document.getElementById("slider7").value;
-  var slider8 = document.getElementById("slider8").value;
+  // var slider8 = document.getElementById("slider8").value;
 
   //Change Your Code here
   var coatingTime =
