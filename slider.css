@@ -15,27 +15,56 @@ input::-webkit-inner-spin-button {
 } */
 
 
+/* Gets rid of all native formating */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  width: 95%;
-  float: Center;
-  margin: 0 0 0 3%;
-  /* background-color: #e6e5e5; */
+  width: 100%;
+  float: left;
+  margin: 0 0 0 0;
+  padding: 10px;
+  background-color: #dbe1e2;
+
 }
 .content {
   width: 40%;
   float: left;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  text-align: left;
+  padding-top: 1%;
+  padding-right: 3%;
+  padding-bottom: 1%;
+  background-color: #b3f9ff;
+  margin-left: 1%;
+  margin-top: 2%;
 }
 .floaty {
   width: 25%;
-  margin: 3% 0 0 3%;
+  margin: 3% 0 0 1%;
   float: left;
-text-align: left;
+text-align: right;
+padding-right: 4%;
+padding-bottom: 1%;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  background-color: #b3f9ff;
+  line-height: 1.8;
 }
 .floaty2 {
   width: 30%;
-  margin: 3% 0 0 0;
+  margin: 3% 0 0 1%;
+  padding-left: 1%;
   float: left;
 text-align: left;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  background-color: #b3f9ff;
+  
 }
 
 h1 {
@@ -50,7 +79,7 @@ h2 {
 
 .slider1_parent {
   padding-bottom: 6px;
-  padding-left: 40px;
+  padding-left: 20px;
   font-family: "Source Sans Pro", sans-serif;
 }
 .slider1_parent .title {
@@ -62,7 +91,7 @@ h2 {
 .slider1_parent .slider1 {
   border: solid 1px #c2c2c2;
   width: 60px;
-  padding: 0 3px 0 3px;
+  padding: 0 0 0 0;
   height: 18px;
   vertical-align: top;
   margin: 4px 4px 4px 10px;
@@ -143,36 +172,53 @@ h2 {
 }
 .Row {
   display: table;
-  width: 95%; /*Optional*/
-  table-layout: fixed; /*Optional*/
-  border-spacing: 0px; /*Optional*/
-  margin-top: 0%;
-  margin-left: 50px;
-}
-.Row_ticks {
-  display: table;
   width: 98%; /*Optional*/
   table-layout: fixed; /*Optional*/
   border-spacing: 0px; /*Optional*/
+  margin-top: 0%;
+  margin-left: 30px;
+}
+.Row_ticks {
+  display: table;
+  width: 100%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 0px; /*Optional*/
   margin-top: -5%;
-  margin-left: 52px;
+  margin-left: 32px;
   color: #c5c5c5;
 }
 .Row2 {
   display: table;
+  width: 102%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 0px; /*Optional*/
+  margin-top: 0%;
+  margin-left: 30px;
+}
+.Row_ticks2 {
+  display: table;
+  width: 102%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 0px; /*Optional*/
+  margin-top: -5%;
+  margin-left: 32px;
+  color: #c5c5c5;
+}
+.Row3 {
+  display: table;
   width: 98%; /*Optional*/
   table-layout: fixed; /*Optional*/
   border-spacing: 0px; /*Optional*/
   margin-top: 0%;
-  margin-left: 50px;
+  margin-left: 30px;
 }
-.Row_ticks2 {
+.Row_ticks3 {
   display: table;
   width: 98%; /*Optional*/
   table-layout: fixed; /*Optional*/
   border-spacing: 0px; /*Optional*/
   margin-top: -5%;
-  margin-left: 52px;
+  margin-left: 32px;
   color: #c5c5c5;
 }
 .marker {
@@ -195,12 +241,17 @@ h2 {
   text-align: center;
 }
 
+#tablet,
+#numGuns,
+#surfaceArea,
+#bulk,
 #coatingTime,
 #perBatch,
 #perTablet,
 #perMm2,
 #perGun,
 #perSprayAmount,
+#sprayAmount,
 #panFill {
   text-align: center;
 }

@@ -539,6 +539,15 @@ function calculate() {
   document.getElementById("perTablet").value = parseFloat(
     calcCoatPerTab
   ).toFixed(2);
+    // calcPerBatch = function (obj) {
+    //   if ((obj.value = Infinity)) {
+    //     obj.value = "";
+    //   } else
+    //     obj.value =
+    //       (document.getElementById("slider1").value * 1000) /
+    //       (document.getElementById("tablet").value / 1000);
+    // };
+    // calcPerBatch(document.getElementById("perBatch"));
   var perBatch =
     (document.getElementById("slider1").value * 1000) /
     (document.getElementById("tablet").value / 1000);
@@ -553,8 +562,8 @@ function calculate() {
   document.getElementById("perGun").value = calcSprayPerGun.toFixed(2);
 
   // Change slider1 value field background based on value entered
-  var bsm2 = 83;
-  var bsm3 = 124;
+  var bsm2 = parseFloat(document.getElementById("bsMarker2").innerHTML);
+  var bsm3 = parseFloat(document.getElementById("bsMarker3").innerHTML);
   var changeColor1 = function (obj) {
     if (obj.value > bsm2 && obj.value < bsm3) {
       obj.style.backgroundColor = "#84f415f0";
