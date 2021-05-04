@@ -18,11 +18,7 @@ app.post('/api', (request, response) => {
   const timestamp = Date.now();
   data.timestamp = timestamp;
   database.insert(data);
-  response.json({
-    status: "success woohoo",
-    timestamp: timestamp,
-    airflow: data.airflow
-  });
+  response.json(data);
 });
 
 // function setSliderTo(name, value) {
