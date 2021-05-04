@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sliders.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="slider.css" />
+    <!-- <style>
+      body {
+        font-variant: small-caps;
+      }
+    </style> -->
+  </head>
+
+  <body>
+    
+    <div class="content">
+      <h1>Fully Perforated 48" pan</h1>
+      <input
+        type="text"
+        class="slider1"
+        id="slider1"
+        name="value1"
+        text="Batch Size (kg)"
+        min="55.0"
+        max="138.5"
+        value="97.2"
+        step="0.1"
+        color="#8a8c88"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row">
+        <div class="marker" id="bsMarker1">55</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker" id="bsMarker2">83</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker" id="bsMarker3">124</div>
+        <div class="marker"></div>
+        <div class="marker"id="bsMarker4">138</div>
+      </div>
+      <input
+        type="text"
+        class="slider1"
+        id="slider6"
+        name="value6"
+        text="Airflow (cfm)"
+        min="1200"
+        max="2200"
+        value="1800"
+        color="#f34a47"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row">
+        <div class="marker">1200</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">1600</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">1900</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">2200</div>
+      </div>
+      <input
+        type="text"
+        class="slider1"
+        id="slider2"
+        name="value2"
+        text="Spray Rate (g/min)"
+        min="200"
+        max="500"
+        value="350"
+        color="#34a8f6"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row">
+        <div class="marker">200</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">325</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">410</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">500</div>
+      </div>
+      <input
+        type="text"
+        class="slider1"
+        id="slider3"
+        name="value3"
+        text="Weight Gain (%)"
+        min="0"
+        max="8"
+        value="3"
+        step="0.1"
+        color="#34a8f6"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks2">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row2">
+        <div class="marker">0</div>
+        <div class="marker"></div>
+        <div class="marker">2</div>
+        <div class="marker"></div>
+        <div class="marker">4</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">8</div>
+      </div>
+      <input
+        type="text"
+        class="slider1"
+        id="slider4"
+        name="value4"
+        text="Bed Temp (C)"
+        min="35"
+        max="50"
+        value="43"
+        color="#f34a47"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks3">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row3">
+        <div class="marker">35</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">40</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">45</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">50</div>
+      </div>
+      <input
+        type="text"
+        class="slider1"
+        id="slider5"
+        name="value5"
+        text="Pan Speed (rpm)"
+        min="3"
+        max="10"
+        value="6"
+        color="#8a8c88"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks2">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row2">
+        <div class="marker">3</div>
+        <div class="marker"></div>
+        <div class="marker">5</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">8</div>
+        <div class="marker"></div>
+        <div class="marker">10</div>
+      </div>
+      <input
+        type="text"
+        class="slider1"
+        id="slider7"
+        name="value7"
+        text="Spray
+      Solids Content (%)"
+        min="5"
+        max="30"
+        value="15"
+        step="1"
+        color="#34a8f6"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks2">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row2">
+        <div class="marker">5</div>
+        <div class="marker"></div>
+        <div class="marker">12</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">20</div>
+        <div class="marker"></div>
+        <div class="marker"></div>
+        <div class="marker">30</div>
+      </div>
+      <!-- <input
+        type="text"
+        class="slider1"
+        id="slider8"
+        name="value8"
+        text="BETA - Spray Per Gun (g/min)"
+        min="50"
+        max="125"
+        value="75"
+        step="1"
+        onchange="calculate()"
+      />
+      <div class="Row_ticks">
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+        <div class="marker"></div>
+        <div class="marker">|</div>
+      </div>
+      <div class="Row">
+        <div class="marker">50</div>
+        <div class="marker"></div>
+        <div class="marker">75</div>
+        <div class="marker"></div>
+        <div class="marker">100</div>
+        <div class="marker"></div>
+        <div class="marker">125</div>
+
+      </div> -->
+    </div>
+      <!-- Change Label Here -->
+      <div class="floaty">
+      <h2>Inputs for Calculations:</h2>
+    <label for="tablet">Tablet Weight (mg)</label>
+    <input 
+    type = "text"
+    id="tablet" 
+    value=""
+    size = "7"
+     />
+    <p></p>
+    <label for="surfaceArea">Tablet Surface Area (mm<sup>2</sup>)</label>
+    <input 
+    id="surfaceArea" 
+    size = "7" />
+    <p></p>
+    <label>Bulk Density (g/mL)</label>
+    <input 
+    type="number"
+    id="bulk" 
+    step = "0.1"
+    min="0.1"
+    max="0.9"
+    value="0.7"/>
+    <p></p>
+    <label for="numGuns">Number of Guns</label>
+    <input 
+    type="number"
+    id="numGuns" 
+    min="2"
+    max="4"
+    size = "7"
+    value = "4" /> <span></span>
+    <p></p>
+    <form action=""></form>
+    <label for="typeCoat">Type of Coating:</label>
+    <select name="typeCoat" id="typeCoat">
+      <option value="Aesthetic Pigmented Coating" id="typeCoat">Aesthetic Pigmented Coating</option>
+      <option value="Aesthetic Clear Coating" id="typeCoat">Aesthetic Clear Coating</option>
+      <option value="Functional Coating" id="typeCoat">Functional Coating</option>
+    </select>
+
+      <h2>Calculations:</h2>
+      <label for="">Pan Fill (%)</label>
+      <input type="integer" id="panFill" size = "7"disabled />
+      <p></p>
+      <label for="">Coating Time (min)</label>
+      <input type="integer" id="coatingTime" size = "7"disabled />
+      <p></p>
+      <label for="">Spray Per Gun (g/min)</label>
+      <input type="integer" id="perGun" size = "7"disabled /> <span id="HL"></span>
+      <p></p>
+      <label for="">Spray Amount (kg)</label>
+      <input type="integer" id="sprayAmount" size = "7" disabled />
+      <p></p>
+      <label for="">Tablets per Batch (approx.)</label>
+      <input type="integer" id="perBatch" size = "7" disabled />
+      <p></p>
+      <label for="">Coating per Tablet (mg)</label>
+      <input type="integer" id="perTablet" size = "7"disabled />
+      <p></p>
+      <label for="">Coating per Tablet (mg/mm<sup>2</sup>)</label>
+      <input type="integer" id="perMm2" size = "7"disabled /> 
+        </div>
+        
+          </div>
+    <div class="floaty2">
+      <h2>Risks:</h2>
+    <p id="Risk1"></p> 
+    <p id="Risk2"></p>  
+      </div>
+      
+      <div class="floaty3">
+      <button id="Save">Save to Database</button>
+      </div>  
+      
+    
+    <script type="text/javascript" src="sliders2.js"></script>
+    <script type="text/javascript" src="sliders.js"></script>
+    <script>
+      
+      const airflowData = {"airflow":"1600"};
+      const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(airflowData)
+      };
+      fetch('api', options)
+      .then(response => response.json())
+      .then(json => console.log(json))
+      
+      // fetch('api', options).then(response => {
+      //   console.log(response.json());
+      // }); 
+    </script>
+
+  </body>
+</html>

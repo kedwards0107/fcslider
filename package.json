@@ -1,0 +1,27 @@
+{
+  "name": "fcslider",
+  "version": "1.0.0",
+  "description": "film coating slider",
+  "main": "slider2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kedwards0107/fcslider.git"
+  },
+  "keywords": [
+    "slider",
+    "film",
+    "coating"
+  ],
+  "author": "Kevin Edwards",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kedwards0107/fcslider/issues"
+  },
+  "homepage": "https://github.com/kedwards0107/fcslider#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
