@@ -14,7 +14,7 @@ app.post('/api', (request, response) => {
   const data = request.body;
   response.json({
     status: "success woohoo",
-    airflow: data.airflowData
+    airflow: data.airflow
   });
 });
 

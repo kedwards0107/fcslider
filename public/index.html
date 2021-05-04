@@ -388,7 +388,7 @@
     <p id="Risk1"></p> 
     <p id="Risk2"></p>  
       </div>
-      
+
       <div class="floaty3">
       <button id="Save">Save to Database</button>
       </div>  
@@ -397,17 +397,21 @@
     <script type="text/javascript" src="sliders2.js"></script>
     <script type="text/javascript" src="sliders.js"></script>
     <script>
-      
-      const airflowData = {"airflow":"1600"};
+      document.getElementById('Save').addEventListener('click', event => {
+        console.log("clicked button");
+        let airflow = (document.getElementById('slider6')).value;
+        console.log(airflow);
+      const airflowData = {"airflow": airflow};
       const options = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(airflowData)
       };
       fetch('api', options)
+      .then(response => response)
       .then(response => response.json())
       .then(json => console.log(json))
-      
+    });
       // fetch('api', options).then(response => {
       //   console.log(response.json());
       // }); 
