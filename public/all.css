@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  float: left;
+  margin: 100px 0 50px 50px;
+  padding: 30px;
+  background-color: #dbe1e2;
+  
+
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 50px, 250px;
+}
+
+td {
+    padding: 30px, 50px;
+     border-collapse: separate;
+    border-spacing: 50px, 250px;
+}
+
+#header {
+    padding: 50px, 50px;
+
+}

@@ -3,31 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="all.css" />
     <title>Document</title>
 </head>
 <body>
     <h1>Data Log</h1>
+    <table>
+        <tr id="header">
+            <th>Description</th>
+            <th>Airflow</th>
+            <th>Date</th>
+        </tr>
+
+    </table>
     <script>
         getData();
         async function getData() {
-            const response = await fetch('api');
+            const response = await fetch('/api');
             const data = await response.json();
             for (item of data){
-                const root = document.createElement('div');
-                const description = document.createElement('div');
-                const airflow = document.createElement('div');
-                const date = document.createElement('div'); 
+                const root = document.createElement('tr');
+                const description = document.createElement('td');
+                const airflow = document.createElement('td');
+                const date = document.createElement('td'); 
          
-                description.textContent = `description: ${item.description}`;
-                airflow.textContent = `airflow: ${item.airflow}`;
+                description.textContent = item.description;
+                airflow.textContent = item.airflow;
                 const dateString = new Date(item.timestamp).toLocaleString();
                 date.textContent = dateString;
 
-                root.append(description, airflow, date);   
+                root.append(description, airflow, date );   
                 document.body.append(root);  
             }
             console.log(data);
         }
+
     </script>
 </body>
 </html>

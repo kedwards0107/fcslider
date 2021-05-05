@@ -1,3 +1,5 @@
+//https://www.geeksforgeeks.org/how-to-share-code-between-node-js-and-the-browser/
+
 const express = require('express');
 const Datastore = require('nedb');
 const app = express();
@@ -20,6 +22,7 @@ app.get('/api', (request, response) => {
     response.json(data);
   });
 });
+
 
 app.post('/api', (request, response) => {
   console.log("I got a request!");
