@@ -14,10 +14,10 @@ body {
 
 #subheader,
 #myTable {
-    width: 100%;
+    width: 80%;
     float: center;
     border-collapse: separate;
-    border-spacing: 10px, 0px;
+    border-spacing: 0px, 0px;
     text-align: center;
 }
 
