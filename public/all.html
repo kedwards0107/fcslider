@@ -18,9 +18,11 @@
             var x = document.createElement("TABLE");
             x.setAttribute("id", "myTable");
             var z = document.createElement('th');
+            var e = document.createElement('th');
             var b = document.createElement('th');
             var c = document.createElement('th');
             z.setAttribute("id", "header");
+            e.setAttribute("id", "header");
             b.setAttribute("id", "header");
             c.setAttribute("id", "header");
             document.body.appendChild(x);
@@ -28,26 +30,30 @@
             a.setAttribute("id", "subheader");
             document.getElementById("myTable").appendChild(a);
             document.getElementById("subheader").appendChild(z);
+            document.getElementById("subheader").appendChild(e);
             document.getElementById("subheader").appendChild(b);
             document.getElementById("subheader").appendChild(c);
             z.textContent = "Description";
-            b.textContent = "Airflow";
+            e.textContent = "Batch Size (kg)";
+            b.textContent = "Airflow (cfm)";
             c.textContent = "Date & Time";
 
             for (item of data){
                 const root = document.createElement('tr');
                 root.setAttribute("id", "myTable")
                 const description = document.createElement('td');
+                const batch = document.createElement('td');
                 const airflow = document.createElement('td');
                 const date = document.createElement('td'); 
          
                 description.textContent = item.description;
+                batch.textContent = item.batch;
                 airflow.textContent = item.airflow;
                 const dateString = new Date(item.timestamp).toLocaleString();
                 date.textContent = dateString;
 
-                root.append(description, airflow, date );
-                cap.push([item.description, item.airflow, dateString] );  
+                root.append(description, batch, airflow, date );
+                cap.push([item.description, item.batch, item.airflow, dateString] );  
                 document.getElementById("myTable").appendChild(root);  
             }
             console.log(data);
@@ -55,7 +61,7 @@
  
  
 function download_csv() {
-    var csv = 'Description, Airflow, Date, Time\n';
+    var csv = 'Description, Batch, Airflow, Date, Time\n';
     cap.forEach(function(row) {
             csv += row.join(',');
             csv += "\n";

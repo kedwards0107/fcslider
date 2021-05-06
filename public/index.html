@@ -401,8 +401,9 @@
     <script>
       document.getElementById('Save').addEventListener('click', event => {
         const description = (document.getElementById('Description')).value;
+        const batch = (document.getElementById('slider1')).value;
         const airflow = (document.getElementById('slider6')).value;
-        const data = {description, airflow};
+        const data = {description, batch, airflow};
         console.log(airflow);
       // const airflowData = {"airflow": airflow};
       const options = {
