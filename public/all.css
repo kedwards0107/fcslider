@@ -14,18 +14,15 @@ body {
 
 }
 
-table {
+#subheader,
+#myTable {
+    width: 80%;
+    float: center;
     border-collapse: separate;
-    border-spacing: 50px, 250px;
-}
-
-td {
-    padding: 30px, 50px;
-     border-collapse: separate;
-    border-spacing: 50px, 250px;
+    border-spacing: 20px, 0px;
+    text-align: center;
 }
 
 #header {
-    padding: 50px, 50px;
-
+    float: center;
 }
