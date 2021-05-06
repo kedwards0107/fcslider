@@ -17,6 +17,7 @@
 
     </table>
     <script>
+        const cap = []
         getData();
         async function getData() {
             const response = await fetch('/api');
@@ -32,12 +33,30 @@
                 const dateString = new Date(item.timestamp).toLocaleString();
                 date.textContent = dateString;
 
-                root.append(description, airflow, date );   
+                root.append(description, airflow, date );
+                cap.push([item.description, item.airflow, dateString] );  
                 document.body.append(root);  
             }
             console.log(data);
         }
-
-    </script>
+ 
+ 
+function download_csv() {
+    var csv = 'Name,Title\n';
+    cap.forEach(function(row) {
+            csv += row.join(',');
+            csv += "\n";
+    });
+ 
+    console.log(csv);
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'filmcoatingtrials.csv';
+    hiddenElement.click();
+}
+</script>
+ 
+<button onclick="download_csv()">Download CSV</button> 
 </body>
 </html>
