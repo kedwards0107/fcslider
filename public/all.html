@@ -20,10 +20,20 @@
             var z = document.createElement('th');
             var e = document.createElement('th');
             var b = document.createElement('th');
+            var f = document.createElement('th');
+            var g = document.createElement('th');
+            var h = document.createElement('th');
+            var i = document.createElement('th');
+            var j = document.createElement('th');
             var c = document.createElement('th');
             z.setAttribute("id", "header");
             e.setAttribute("id", "header");
             b.setAttribute("id", "header");
+            f.setAttribute("id", "header");
+            g.setAttribute("id", "header");
+            h.setAttribute("id", "header");
+            i.setAttribute("id", "header");
+            j.setAttribute("id", "header");
             c.setAttribute("id", "header");
             document.body.appendChild(x);
             var a = document.createElement('tr');
@@ -32,10 +42,20 @@
             document.getElementById("subheader").appendChild(z);
             document.getElementById("subheader").appendChild(e);
             document.getElementById("subheader").appendChild(b);
+            document.getElementById("subheader").appendChild(f);
+            document.getElementById("subheader").appendChild(g);
+            document.getElementById("subheader").appendChild(h);
+            document.getElementById("subheader").appendChild(i);
+            document.getElementById("subheader").appendChild(j);
             document.getElementById("subheader").appendChild(c);
             z.textContent = "Description";
             e.textContent = "Batch Size (kg)";
             b.textContent = "Airflow (cfm)";
+            f.textContent = "Spray Rate (g/min)";
+            g.textContent = "Weight Gain (%)";
+            h.textContent = "Bed Temp (C)";
+            i.textContent = "Pan Speed (rpm)";
+            j.textContent = "Solids Content (%)";
             c.textContent = "Date & Time";
 
             for (item of data){
@@ -44,16 +64,26 @@
                 const description = document.createElement('td');
                 const batch = document.createElement('td');
                 const airflow = document.createElement('td');
+                const sprayrate = document.createElement('td');
+                const weightgain = document.createElement('td');
+                const bedtemp = document.createElement('td');
+                const panspeed = document.createElement('td');
+                const spraysolids = document.createElement('td');
                 const date = document.createElement('td'); 
          
                 description.textContent = item.description;
                 batch.textContent = item.batch;
                 airflow.textContent = item.airflow;
+                sprayrate.textContent = item.sprayrate;
+                weightgain.textContent = item.weightgain;
+                bedtemp.textContent = item.bedtemp;
+                panspeed.textContent = item.panspeed;
+                spraysolids.textContent = item.spraysolids;
                 const dateString = new Date(item.timestamp).toLocaleString();
                 date.textContent = dateString;
 
-                root.append(description, batch, airflow, date );
-                cap.push([item.description, item.batch, item.airflow, dateString] );  
+                root.append(description, batch, airflow, sprayrate, weightgain, bedtemp, panspeed, spraysolids, date );
+                cap.push([item.description, item.batch, item.airflow, item.sprayrate, item.weightgain, item.bedtemp, item.panspeed, item.spraysolids, dateString] );  
                 document.getElementById("myTable").appendChild(root);  
             }
             console.log(data);
@@ -61,7 +91,7 @@
  
  
 function download_csv() {
-    var csv = 'Description, Batch, Airflow, Date, Time\n';
+    var csv = 'Description, Batch, Airflow, Spray Rate (g/min), Weight Gain (%), Bed Temp (C), Pan Speed (rpm), Spray Solids (%), Date, Time\n';
     cap.forEach(function(row) {
             csv += row.join(',');
             csv += "\n";

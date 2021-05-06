@@ -403,7 +403,12 @@
         const description = (document.getElementById('Description')).value;
         const batch = (document.getElementById('slider1')).value;
         const airflow = (document.getElementById('slider6')).value;
-        const data = {description, batch, airflow};
+        const sprayrate = (document.getElementById('slider2')).value;
+        const weightgain = (document.getElementById('slider3')).value;
+        const bedtemp = (document.getElementById('slider4')).value;
+        const panspeed = (document.getElementById('slider5')).value;
+        const spraysolids = (document.getElementById('slider7')).value;
+        const data = {description, batch, airflow, sprayrate, weightgain, bedtemp, panspeed, spraysolids};
         console.log(airflow);
       // const airflowData = {"airflow": airflow};
       const options = {

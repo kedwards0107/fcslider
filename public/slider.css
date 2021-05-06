@@ -22,6 +22,13 @@ input::-webkit-inner-spin-button {
   box-sizing: border-box;
 }
 
+button {
+  margin: 20px 0;
+  background-color: #b3f9ff;
+  border: 2px solid #73AD21;
+  border-radius: 10px;
+}
+
 body {
   width: 100%;
   float: left;
