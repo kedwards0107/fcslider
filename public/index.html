@@ -174,10 +174,10 @@
         class="slider1"
         id="slider4"
         name="value4"
-        text="Bed Temp (C)"
-        min="35"
-        max="50"
-        value="43"
+        text="Exhaust Temp (C)"
+        min="37"
+        max="52"
+        value="45"
         color="#f34a47"
         onchange="calculate()"
       />
@@ -200,22 +200,22 @@
         <div class="marker">|</div>
       </div>
       <div class="Row3">
-        <div class="marker">35</div>
+        <div class="marker">37</div>
         <div class="marker"></div>
         <div class="marker"></div>
         <div class="marker"></div>
         <div class="marker"></div>
-        <div class="marker">40</div>
+        <div class="marker">42</div>
         <div class="marker"></div>
         <div class="marker"></div>
         <div class="marker"></div>
         <div class="marker"></div>
-        <div class="marker">45</div>
+        <div class="marker">47</div>
         <div class="marker"></div>
         <div class="marker"></div>
         <div class="marker"></div>
         <div class="marker"></div>
-        <div class="marker">50</div>
+        <div class="marker">52</div>
       </div>
       <input
         type="text"
@@ -410,7 +410,7 @@
         const airflow = (document.getElementById('slider6')).value;
         const sprayrate = (document.getElementById('slider2')).value;
         const weightgain = (document.getElementById('slider3')).value;
-        const bedtemp = (document.getElementById('slider4')).value;
+        const exhaustTemp = (document.getElementById('slider4')).value;
         const panspeed = (document.getElementById('slider5')).value;
         const spraysolids = (document.getElementById('slider7')).value;
         const tablet = (document.getElementById('tablet')).value;
@@ -426,7 +426,7 @@
         const perTablet = (document.getElementById('perTablet')).value;
         const perMm2 = (document.getElementById('perMm2')).value;
         const Risk1 = (document.getElementById('Risk1')).value;
-        const data = {description, batch, airflow, sprayrate, weightgain, bedtemp, panspeed, spraysolids, tablet, surfaceArea, bulk, numGuns, typeCoat, panFill, coatingTime, perGun, sprayAmount, perBatch, perTablet, perMm2, Risk1};
+        const data = {description, batch, airflow, sprayrate, weightgain, exhaustTemp, panspeed, spraysolids, tablet, surfaceArea, bulk, numGuns, typeCoat, panFill, coatingTime, perGun, sprayAmount, perBatch, perTablet, perMm2, Risk1};
         console.log(airflow);
       // const airflowData = {"airflow": airflow};
       const options = {

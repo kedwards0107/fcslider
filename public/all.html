@@ -89,7 +89,7 @@
             b.textContent = "Airflow (cfm)";
             f.textContent = "Spray Rate (g/min)";
             g.textContent = "Weight Gain (%)";
-            h.textContent = "Bed Temp (C)";
+            h.textContent = "Exhaust Temp (C)";
             i.textContent = "Pan Speed (rpm)";
             j.textContent = "Solids Content (%)";
             k.textContent = "Tablet Weight(mg)";
@@ -114,7 +114,7 @@
                 const airflow = document.createElement('td');
                 const sprayrate = document.createElement('td');
                 const weightgain = document.createElement('td');
-                const bedtemp = document.createElement('td');
+                const exhaustTemp = document.createElement('td');
                 const panspeed = document.createElement('td');
                 const spraysolids = document.createElement('td');
                 const tablet = document.createElement('td');
@@ -136,7 +136,7 @@
                 airflow.textContent = item.airflow;
                 sprayrate.textContent = item.sprayrate;
                 weightgain.textContent = item.weightgain;
-                bedtemp.textContent = item.bedtemp;
+                exhaustTemp.textContent = item.exhaustTemp;
                 panspeed.textContent = item.panspeed;
                 spraysolids.textContent = item.spraysolids;
                 tablet.textContent = item.tablet;
@@ -154,8 +154,8 @@
                 const dateString = new Date(item.timestamp).toLocaleString();
                 date.textContent = dateString;
 
-                root.append(description, batch, airflow, sprayrate, weightgain, bedtemp, panspeed, spraysolids, tablet, surfaceArea, bulk, numGuns, typeCoat, panFill, coatingTime, perGun, sprayAmount, perBatch, perTablet, perMm2, date );
-                cap.push([item.description, item.batch, item.airflow, item.sprayrate, item.weightgain, item.bedtemp, item.panspeed, item.spraysolids, item.tablet, item.surfaceArea, item.bulk, item.numGuns, item.typeCoat, item.panFill, item.coatingTime, item.perGun, item.sprayAmount, item.perBatch, item.perTablet, item.perMm2, dateString] );  
+                root.append(description, batch, airflow, sprayrate, weightgain, exhaustTemp, panspeed, spraysolids, tablet, surfaceArea, bulk, numGuns, typeCoat, panFill, coatingTime, perGun, sprayAmount, perBatch, perTablet, perMm2, date );
+                cap.push([item.description, item.batch, item.airflow, item.sprayrate, item.weightgain, item.exhaustTemp, item.panspeed, item.spraysolids, item.tablet, item.surfaceArea, item.bulk, item.numGuns, item.typeCoat, item.panFill, item.coatingTime, item.perGun, item.sprayAmount, item.perBatch, item.perTablet, item.perMm2, dateString] );  
                 document.getElementById("myTable").appendChild(root);  
             }
             console.log(data);
@@ -163,7 +163,7 @@
  
  
 function download_csv() {
-    var csv = 'Description, Batch, Airflow, Spray Rate (g/min), Weight Gain (%), Bed Temp (C), Pan Speed (rpm), Spray Solids (%), Tablet weight (mg), Tablet Surface Area (mm2), Tablet Bulk Density (g/mL), Number of Spray Guns, Type of Coating, Pan Fill (%), Coating Time (min), Spray per Gun (g/min), Spray Amount (kg), Tablets per Batch, Coating per Tablet (mg), Coating per Tablet (mg/mm2), Date, Time\n';
+    var csv = 'Description, Batch, Airflow, Spray Rate (g/min), Weight Gain (%), Exhaust Temp (C), Pan Speed (rpm), Spray Solids (%), Tablet weight (mg), Tablet Surface Area (mm2), Tablet Bulk Density (g/mL), Number of Spray Guns, Type of Coating, Pan Fill (%), Coating Time (min), Spray per Gun (g/min), Spray Amount (kg), Tablets per Batch, Coating per Tablet (mg), Coating per Tablet (mg/mm2), Date, Time\n';
     cap.forEach(function(row) {
             csv += row.join(',');
             csv += "\n";

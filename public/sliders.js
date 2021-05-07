@@ -640,13 +640,13 @@ function calculate() {
   };
   changeColor5(document.getElementById("panFill"));
 
-  // Change Bed Temp field background based on value entered
+  // Change Exhaust Temp field background based on value entered
   var changeColor6 = function (obj) {
-    if (obj.value > 40 && obj.value < 45) {
+    if (obj.value > 42 && obj.value < 47) {
       obj.style.backgroundColor = "#84f415f0";
-    } else if (obj.value > 47) {
+    } else if (obj.value > 50) {
       obj.style.backgroundColor = "red";
-    } else if (obj.value < 35) {
+    } else if (obj.value < 39) {
       obj.style.backgroundColor = "red";
     } else obj.style.backgroundColor = "yellow";
   };
