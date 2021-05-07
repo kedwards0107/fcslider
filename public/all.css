@@ -17,7 +17,7 @@ body {
 #myTable {
     width: 100%;
     float: center;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0px, 0px;
     text-align: center;
 }
