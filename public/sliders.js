@@ -550,22 +550,21 @@ function calculate() {
     };
     calcPerBatch(document.getElementById("perBatch"));
   
-    var  calcMm2 = function (obj) {
-        if (obj.value > 0 && document.getElementById("perTablet").value > 0) {
-          obj.value =
-            document.getElementById("perTablet").value /
-            document.getElementById("surfaceArea").value;
-          document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(
-            3
-          );
-        } else document.getElementById("perMm2").value = "0";
-        };
+    // var  calcMm2 = function (obj) {
+    //     if (obj.value > 0 && document.getElementById("perTablet").value > 0) {
+    //       obj.value =
+    //         document.getElementById("perTablet").value /
+    //         document.getElementById("surfaceArea").value;
+    //       document.getElementById("perMm2").value = parseFloat(perMm2).toFixed(
+    //         3);
+    //     } else document.getElementById("perMm2").value = "0";
+    //     };
 
-      calcMm2(document.getElementById("surfaceArea"));
-  // var calcMm2 =
-  //   document.getElementById("perTablet").value /
-  //   document.getElementById("surfaceArea").value;
-  // document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
+    //   calcMm2(document.getElementById("surfaceArea"));
+  var calcMm2 =
+    document.getElementById("perTablet").value /
+    document.getElementById("surfaceArea").value;
+  document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
   var calcSprayPerGun =
     document.getElementById("slider2").value /
     document.getElementById("numGuns").value;
