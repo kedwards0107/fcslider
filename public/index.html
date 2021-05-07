@@ -394,18 +394,26 @@
       <label for="Description">Description:
     <input id="Description" placeholder = "ex.DOE-1" value="" />  
 </label>
-    <button class="popup" onclick="myFunction() "id="Save">Save to Database
+    <button class="popup" id="Save" >Save to Database
       </button> 
+      <!-- onclick="myFunction()" id="Save" -->
       <!-- <span class="popuptext" id="myPopup">Saved</span> -->
-
-      </div>  
+    </div>
+    <div class = "floaty4">
+    <span id="counter">0 new runs saved</span>
+   <a href="//localhost:3000/all.html">
+  <button>View Saved Runs</button>
+  </a>
+ </div>
       
     
     <script type="text/javascript" src="sliders2.js"></script>
     <script type="text/javascript" src="sliders.js"></script>
     <script>
+      var cmp = document.getElementById('counter');
       document.getElementById('Save').addEventListener('click', event => {
         const description = (document.getElementById('Description')).value;
+        cmp.innerHTML = `${parseInt(cmp.innerHTML) +1} new runs saved` ;
         const batch = (document.getElementById('slider1')).value;
         const airflow = (document.getElementById('slider6')).value;
         const sprayrate = (document.getElementById('slider2')).value;
