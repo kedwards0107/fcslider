@@ -710,3 +710,8 @@ function calculate() {
   };
   enterRisk1(document.getElementById("panFill"));
 }
+
+// function myFunction() {
+//   var popup = document.getElementById("myPopup");
+//   popup.classList.add("show");
+// }

@@ -7,14 +7,15 @@
 body {
   width: 100%;
   float: left;
-  margin: 100px 0 50px 50px;
+  margin: 100px 0 50px 20px;
   padding: 30px;
   background-color: #dbe1e2;
+  font-size: 15px;
 }
 
 #subheader,
 #myTable {
-    width: 80%;
+    width: 100%;
     float: center;
     border-collapse: separate;
     border-spacing: 0px, 0px;

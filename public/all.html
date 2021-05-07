@@ -25,6 +25,18 @@
             var h = document.createElement('th');
             var i = document.createElement('th');
             var j = document.createElement('th');
+            var k = document.createElement('th');
+            var l = document.createElement('th');
+            var m = document.createElement('th');
+            var n = document.createElement('th');
+            var o = document.createElement('th');
+            var p = document.createElement('th');
+            var q = document.createElement('th');
+            var r = document.createElement('th');
+            var s = document.createElement('th');
+            var t = document.createElement('th');
+            var u = document.createElement('th');
+            var v = document.createElement('th');
             var c = document.createElement('th');
             z.setAttribute("id", "header");
             e.setAttribute("id", "header");
@@ -34,6 +46,18 @@
             h.setAttribute("id", "header");
             i.setAttribute("id", "header");
             j.setAttribute("id", "header");
+            k.setAttribute("id", "header");
+            l.setAttribute("id", "header");
+            m.setAttribute("id", "header");
+            n.setAttribute("id", "header");
+            o.setAttribute("id", "header");
+            p.setAttribute("id", "header");
+            q.setAttribute("id", "header");
+            r.setAttribute("id", "header");
+            s.setAttribute("id", "header");
+            t.setAttribute("id", "header");
+            u.setAttribute("id", "header");
+            v.setAttribute("id", "header");
             c.setAttribute("id", "header");
             document.body.appendChild(x);
             var a = document.createElement('tr');
@@ -47,6 +71,18 @@
             document.getElementById("subheader").appendChild(h);
             document.getElementById("subheader").appendChild(i);
             document.getElementById("subheader").appendChild(j);
+            document.getElementById("subheader").appendChild(k);
+            document.getElementById("subheader").appendChild(l);
+            document.getElementById("subheader").appendChild(m);
+            document.getElementById("subheader").appendChild(n);
+            document.getElementById("subheader").appendChild(o);
+            document.getElementById("subheader").appendChild(p);
+            document.getElementById("subheader").appendChild(q);
+            document.getElementById("subheader").appendChild(r);
+            document.getElementById("subheader").appendChild(s);
+            document.getElementById("subheader").appendChild(t);
+            document.getElementById("subheader").appendChild(u);
+            document.getElementById("subheader").appendChild(v);
             document.getElementById("subheader").appendChild(c);
             z.textContent = "Description";
             e.textContent = "Batch Size (kg)";
@@ -56,6 +92,18 @@
             h.textContent = "Bed Temp (C)";
             i.textContent = "Pan Speed (rpm)";
             j.textContent = "Solids Content (%)";
+            k.textContent = "Tablet Weight(mg)";
+            l.textContent = "Tablet Surface Area (mm2)";
+            m.textContent = "Bulk Density (g/mL)";
+            n.textContent = "Number of Guns";
+            o.textContent = "Type of Coating";
+            p.textContent = "Pan Fill (%)";
+            q.textContent = "Coating Time (min)";
+            r.textContent = "Spray per Gun (g/min)";
+            s.textContent = "Spray Amount (kg)";
+            t.textContent = "Tablets per Batch (approx.)";
+            u.textContent = "Coating per Tablet (mg)";
+            v.textContent = "Coating per Tablet (mg/mm2)";
             c.textContent = "Date & Time";
 
             for (item of data){
@@ -69,6 +117,18 @@
                 const bedtemp = document.createElement('td');
                 const panspeed = document.createElement('td');
                 const spraysolids = document.createElement('td');
+                const tablet = document.createElement('td');
+                const surfaceArea = document.createElement('td');
+                const bulk = document.createElement('td');
+                const numGuns = document.createElement('td');
+                const typeCoat = document.createElement('td');
+                const panFill = document.createElement('td');
+                const coatingTime = document.createElement('td');
+                const perGun = document.createElement('td');
+                const sprayAmount = document.createElement('td');
+                const perBatch = document.createElement('td');
+                const perTablet = document.createElement('td');
+                const perMm2 = document.createElement('td');
                 const date = document.createElement('td'); 
          
                 description.textContent = item.description;
@@ -79,11 +139,23 @@
                 bedtemp.textContent = item.bedtemp;
                 panspeed.textContent = item.panspeed;
                 spraysolids.textContent = item.spraysolids;
+                tablet.textContent = item.tablet;
+                surfaceArea.textContent = item.surfaceArea;
+                bulk.textContent = item.bulk;
+                numGuns.textContent = item.numGuns;
+                typeCoat.textContent = item.typeCoat;
+                panFill.textContent = item.panFill;
+                coatingTime.textContent = item.coatingTime;
+                perGun.textContent = item.perGun;
+                sprayAmount.textContent = item.sprayAmount;
+                perBatch.textContent = item.perBatch;
+                perTablet.textContent = item.perTablet;
+                perMm2.textContent = item.perMm2;
                 const dateString = new Date(item.timestamp).toLocaleString();
                 date.textContent = dateString;
 
-                root.append(description, batch, airflow, sprayrate, weightgain, bedtemp, panspeed, spraysolids, date );
-                cap.push([item.description, item.batch, item.airflow, item.sprayrate, item.weightgain, item.bedtemp, item.panspeed, item.spraysolids, dateString] );  
+                root.append(description, batch, airflow, sprayrate, weightgain, bedtemp, panspeed, spraysolids, tablet, surfaceArea, bulk, numGuns, typeCoat, panFill, coatingTime, perGun, sprayAmount, perBatch, perTablet, perMm2, date );
+                cap.push([item.description, item.batch, item.airflow, item.sprayrate, item.weightgain, item.bedtemp, item.panspeed, item.spraysolids, item.tablet, item.surfaceArea, item.bulk, item.numGuns, item.typeCoat, item.panFill, item.coatingTime, item.perGun, item.sprayAmount, item.perBatch, item.perTablet, item.perMm2, dateString] );  
                 document.getElementById("myTable").appendChild(root);  
             }
             console.log(data);
@@ -91,7 +163,7 @@
  
  
 function download_csv() {
-    var csv = 'Description, Batch, Airflow, Spray Rate (g/min), Weight Gain (%), Bed Temp (C), Pan Speed (rpm), Spray Solids (%), Date, Time\n';
+    var csv = 'Description, Batch, Airflow, Spray Rate (g/min), Weight Gain (%), Bed Temp (C), Pan Speed (rpm), Spray Solids (%), Tablet weight (mg), Tablet Surface Area (mm2), Tablet Bulk Density (g/mL), Number of Spray Guns, Type of Coating, Pan Fill (%), Coating Time (min), Spray per Gun (g/min), Spray Amount (kg), Tablets per Batch, Coating per Tablet (mg), Coating per Tablet (mg/mm2), Date, Time\n';
     cap.forEach(function(row) {
             csv += row.join(',');
             csv += "\n";

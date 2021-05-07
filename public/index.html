@@ -394,8 +394,9 @@
       <label for="Description">Description:
     <input id="Description" placeholder = "ex.DOE-1" value="" />  
 </label>
-    <button id="Save">Save to Database</button>
-      
+    <button class="popup" onclick="myFunction() "id="Save">Save to Database
+      </button> 
+      <!-- <span class="popuptext" id="myPopup">Saved</span> -->
 
       </div>  
       
@@ -412,7 +413,20 @@
         const bedtemp = (document.getElementById('slider4')).value;
         const panspeed = (document.getElementById('slider5')).value;
         const spraysolids = (document.getElementById('slider7')).value;
-        const data = {description, batch, airflow, sprayrate, weightgain, bedtemp, panspeed, spraysolids};
+        const tablet = (document.getElementById('tablet')).value;
+        const surfaceArea = (document.getElementById('surfaceArea')).value;
+        const bulk = (document.getElementById('bulk')).value;
+        const numGuns = (document.getElementById('numGuns')).value;
+        const typeCoat = (document.getElementById('typeCoat')).value;
+        const panFill = (document.getElementById('panFill')).value;
+        const coatingTime = (document.getElementById('coatingTime')).value;
+        const perGun = (document.getElementById('perGun')).value;
+        const sprayAmount = (document.getElementById('sprayAmount')).value;
+        const perBatch = (document.getElementById('perBatch')).value;
+        const perTablet = (document.getElementById('perTablet')).value;
+        const perMm2 = (document.getElementById('perMm2')).value;
+        const Risk1 = (document.getElementById('Risk1')).value;
+        const data = {description, batch, airflow, sprayrate, weightgain, bedtemp, panspeed, spraysolids, tablet, surfaceArea, bulk, numGuns, typeCoat, panFill, coatingTime, perGun, sprayAmount, perBatch, perTablet, perMm2, Risk1};
         console.log(airflow);
       // const airflowData = {"airflow": airflow};
       const options = {
