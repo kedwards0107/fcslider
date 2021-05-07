@@ -539,23 +539,33 @@ function calculate() {
   document.getElementById("perTablet").value = parseFloat(
     calcCoatPerTab
   ).toFixed(2);
-    // calcPerBatch = function (obj) {
-    //   if ((obj.value = Infinity)) {
-    //     obj.value = "";
-    //   } else
-    //     obj.value =
-    //       (document.getElementById("slider1").value * 1000) /
-    //       (document.getElementById("tablet").value / 1000);
-    // };
-    // calcPerBatch(document.getElementById("perBatch"));
-  var perBatch =
-    (document.getElementById("slider1").value * 1000) /
-    (document.getElementById("tablet").value / 1000);
-  document.getElementById("perBatch").value = parseFloat(perBatch).toFixed(0);
-  var calcMm2 =
-    document.getElementById("perTablet").value /
-    document.getElementById("surfaceArea").value;
-  document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
+
+   var calcPerBatch = function (obj) {
+      if ((obj.value >= 0 || obj.value == 0)) {
+        obj.value = "0";
+      } else
+        obj.value =
+          (document.getElementById("slider1").value * 1000) /
+          (document.getElementById("tablet").value / 1000);
+    };
+    calcPerBatch(document.getElementById("perBatch"));
+  
+    var  calcMm2 = function (obj) {
+        if (obj.value > 0 && document.getElementById("perTablet").value > 0) {
+          obj.value =
+            document.getElementById("perTablet").value /
+            document.getElementById("surfaceArea").value;
+          document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(
+            3
+          );
+        } else document.getElementById("perMm2").value = "0";
+        };
+
+      calcMm2(document.getElementById("surfaceArea"));
+  // var calcMm2 =
+  //   document.getElementById("perTablet").value /
+  //   document.getElementById("surfaceArea").value;
+  // document.getElementById("perMm2").value = parseFloat(calcMm2).toFixed(3);
   var calcSprayPerGun =
     document.getElementById("slider2").value /
     document.getElementById("numGuns").value;
