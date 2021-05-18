@@ -1,33 +1,5 @@
-{"description":"vvvv","airflow":"1800.00","timestamp":1620298575941,"_id":"0FfhIzrICqfph7ui"}
-{"description":"cccc","airflow":"1800.00","timestamp":1620298572737,"_id":"0MkE00a1jCiHNAaL"}
-{"description":"0808","airflow":"1800.00","timestamp":1620246083274,"_id":"15VDq3vGRKk2y5BU"}
-{"description":"yyyy","airflow":"1800.00","timestamp":1620298895864,"_id":"24ZAOC2UnoaMcqfl"}
-{"description":"0000","airflow":"1800.00","timestamp":1620298715967,"_id":"3Aw6QqFiqizNUuUR"}
-{"description":"ssss","airflow":"1800.00","timestamp":1620296644711,"_id":"4PnA1xgCD2YDvlxQ"}
-{"description":"","airflow":"1800.00","timestamp":1620246123467,"_id":"6f3mSdeKwR4orn2S"}
-{"description":"","airflow":"1800.00","timestamp":1620246123787,"_id":"ACrTcUYEaLUCkFj7"}
-{"description":"sdfsd","airflow":"1800.00","timestamp":1620294289168,"_id":"Btt3DAEyC1mHcMne"}
-{"description":"y","airflow":"1800.00","timestamp":1620298898160,"_id":"C8XMPtn11ksQ7gbE"}
-{"description":"354","airflow":"1800.00","timestamp":1620296848733,"_id":"E7qIrCLAtkkiLFmx"}
-{"description":"343","airflow":"1800.00","timestamp":1620246245581,"_id":"GKSAHqXjGTpVoe6P"}
-{"description":"343","airflow":"1800.00","timestamp":1620246245892,"_id":"MJaz1LdPUmBbalZK"}
-{"description":"5675","airflow":"1800.00","timestamp":1620245966761,"_id":"MSyTEke8laM1eOjA"}
-{"description":"0808","airflow":"1800.00","timestamp":1620245970712,"_id":"Og2McOo6RFXlODg1"}
-{"description":"999","airflow":"1800.00","timestamp":1620298794094,"_id":"OuSfEYpgPJ1m9DXJ"}
-{"description":"343","airflow":"1800.00","timestamp":1620296846401,"_id":"P1HeeCCVwqBFmAS6"}
-{"description":"6786","airflow":"1800.00","timestamp":1620245968704,"_id":"RnxI9A85ioYdGGlG"}
-{"description":"yyy","airflow":"1800.00","timestamp":1620298892209,"_id":"U2ZkWTJqjlwvgyy9"}
-{"description":"","airflow":"1800.00","timestamp":1620246123091,"_id":"UUXVCxZ8Ji03Z1Of"}
-{"description":"343","airflow":"1800.00","timestamp":1620246202874,"_id":"UZFgIxRASLNkyEKl"}
-{"description":"ssss","airflow":"1800.00","timestamp":1620296712277,"_id":"VvLrH2Fq3OJrV71v"}
-{"description":"0808","airflow":"1800.00","timestamp":1620246082758,"_id":"VvpxCBZ3bsdcure7"}
-{"description":"00","airflow":"1800.00","timestamp":1620298718513,"_id":"XwTbW6HBYmH2sfl7"}
-{"description":"7867","airflow":"1800.00","timestamp":1620245964846,"_id":"Z4Fw8sQfO2DVjRuI"}
-{"description":"9","airflow":"1800.00","timestamp":1620298795997,"_id":"avuUpcFjJ4mvqhX7"}
-{"description":"ssss","airflow":"1800.00","timestamp":1620296712860,"_id":"bFneHqvYRogVDOcp"}
-{"description":"343","airflow":"1800.00","timestamp":1620246246404,"_id":"hZw69bmxGpYtD8VL"}
-{"description":"343","airflow":"1800.00","timestamp":1620246246180,"_id":"ryAzXTYK4JTcHAYT"}
-{"description":"ssss","airflow":"1800.00","timestamp":1620294298378,"_id":"tkSyFbPZ89gM9Fkf"}
-{"description":"sf","airflow":"1800.00","timestamp":1620294292989,"_id":"vntz4bcVamtBM5bx"}
-{"description":"5","airflow":"1800.00","timestamp":1620298995629,"_id":"XU6g5RqDVOuGu7N3"}
-{"description":"555","airflow":"1800.00","timestamp":1620298998404,"_id":"XMpe6gvFDQPM6JTq"}
+{"description":"DOE-1","batch":"104.84","airflow":"1548.20","sprayrate":"356.95","weightgain":"3.00","exhaustTemp":"45.00","panspeed":"6.00","spraysolids":"15.00","tablet":"","surfaceArea":"","bulk":"0.7","numGuns":"4","typeCoat":"Aesthetic Pigmented Coating","panFill":"75.7","coatingTime":"58.74","perGun":"89.24","sprayAmount":"20.968","perBatch":"0","perTablet":"0.00","perMm2":"NaN","timestamp":1621358824998,"_id":"7Vxiu8hb8FnkOKNp"}
+{"description":"aa","batch":"102.28","airflow":"1703.05","sprayrate":"438.29","weightgain":"3.04","exhaustTemp":"44.28","panspeed":"7.23","spraysolids":"15.00","tablet":"","surfaceArea":"","bulk":"0.7","numGuns":"4","typeCoat":"Aesthetic Pigmented Coating","panFill":"73.8","coatingTime":"47.29","perGun":"109.57","sprayAmount":"20.729","perBatch":"0","perTablet":"0.00","perMm2":"NaN","timestamp":1620637324216,"_id":"E0vazJdIQDlg5GhW"}
+{"description":"DOE-4","batch":"97.20","airflow":"1800.00","sprayrate":"350.00","weightgain":"3.00","exhaustTemp":"45.00","panspeed":"6.00","spraysolids":"15.00","tablet":"1455","surfaceArea":"766","bulk":"0.7","numGuns":"4","typeCoat":"Aesthetic Pigmented Coating","panFill":"70.2","coatingTime":"55.54","perGun":"87.50","sprayAmount":"19.440","perBatch":"66804","perTablet":"43.65","perMm2":"0.057","timestamp":1620417944761,"_id":"F5xu5QLRDDeUgPLC"}
+{"description":"DOE-1","batch":"131.20","airflow":"1409.26","sprayrate":"413.55","weightgain":"3.00","exhaustTemp":"41.22","panspeed":"7.69","spraysolids":"12.33","tablet":"988","surfaceArea":"442.99999999999994","bulk":"0.7","numGuns":"4","typeCoat":"Aesthetic Pigmented Coating","panFill":"94.7","coatingTime":"77.19","perGun":"103.39","sprayAmount":"31.922","perBatch":"0","perTablet":"29.64","perMm2":"NaN","timestamp":1620417620671,"_id":"RIOednBukuXM0pPu"}
+{"description":"DOE-333","batch":"61.04","airflow":"1913.55","sprayrate":"350.00","weightgain":"3.00","exhaustTemp":"45.00","panspeed":"6.00","spraysolids":"15.00","tablet":"433","surfaceArea":"266","bulk":"0.6","numGuns":"4","typeCoat":"Aesthetic Pigmented Coating","panFill":"51.6","coatingTime":"34.88","perGun":"87.50","sprayAmount":"12.208","perBatch":"0","perTablet":"12.99","perMm2":"0.049","timestamp":1621358930098,"_id":"ulhBtCUyrSjB6CIJ"}
