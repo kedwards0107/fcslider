@@ -541,14 +541,16 @@ function calculate() {
   ).toFixed(2);
 
    var calcPerBatch = function (obj) {
-      if ((obj.value >= 0 || obj.value == 0)) {
+      if ((obj.value == "" || obj.value == 0)) {
         obj.value = "0";
       } else
         obj.value =
           (document.getElementById("slider1").value * 1000) /
           (document.getElementById("tablet").value / 1000);
+        obj.value = parseFloat(obj.value).toFixed(0);
     };
     calcPerBatch(document.getElementById("perBatch"));
+  
   
     // var  calcMm2 = function (obj) {
     //     if (obj.value > 0 && document.getElementById("perTablet").value > 0) {
